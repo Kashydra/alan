@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form onsubmit="return validateLogin()">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username"><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <p id="message"></p>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const message = document.getElementById('message');
+
+            if (username === 'alan' && password === 'qwerty') {
+                message.textContent = 'Login: sucesso';
+                message.style.color = 'green';
+            } else {
+                message.textContent = 'Senha errada';
+                message.style.color = 'red';
+            }
+
+            // Prevent form submission
+            return false;
+        }
+    </script>
+</body>
+</html>
